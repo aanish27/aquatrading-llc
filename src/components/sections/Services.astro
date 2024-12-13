@@ -1,15 +1,35 @@
 ---
-import Service from '../cards/Service.astro';
 import Container from '../shared/Container.astro';
 import Paragraph from '../shared/Paragraph.astro';
 import Title from '../shared/Title.astro';
-import { vehicles } from '../../utils/data.ts';
 import VehicleCard from '../shared/VehicleCard.astro';
 
-type VehiclesProps = {
-  title: string;
-  thumbnail: string;
-};
+const vehicles = [
+  {
+    title: 'Social media marketing',
+    thumbnail: 'images/webuy/img1.jpeg',
+  },
+  {
+    title: 'Amazon affiliate marketing',
+    thumbnail: 'images/webuy/img2.jpeg',
+  },
+  {
+    title: 'Email marketing',
+    thumbnail: 'images/webuy/img3.jpeg',
+  },
+  {
+    title: 'Social media marketing',
+    thumbnail: 'images/webuy/img4.jpeg',
+  },
+  {
+    title: 'Amazon affiliate marketing',
+    thumbnail: 'images/webuy/img5.jpeg',
+  },
+  {
+    title: 'Email marketing',
+    thumbnail: 'images/webuy/img6.jpeg',
+  },
+];
 ---
 
 <section id='services'>
@@ -22,26 +42,12 @@ type VehiclesProps = {
     </div>
     <div class='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>
       {
-        vehicles.map((vehicle: VehiclesProps) => {
+        vehicles.map((vehicle) => {
           return (
-            <VehicleCard
-            title={vehicle.title}
-            thumbnail={vehicle.thumbnail}
-            />
+            <VehicleCard title={vehicle.title} thumbnail={vehicle.thumbnail} />
           );
         })
       }
-      <!-- {
-        services.map((service: ServicesProps) => {
-          return (
-            <Service
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-            />
-          );
-        })
-      } -->
     </div>
     <div class='grid md:grid-cols-2 grid-cols-1 gap-4 my-16'></div>
   </Container>
