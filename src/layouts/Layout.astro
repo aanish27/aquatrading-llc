@@ -104,9 +104,14 @@ const { title } = Astro.props;
       pagination: {
         clickable: true,
       },
-
     });
 
+    const stickyCloseBtns = document.querySelectorAll('.close-button');
+    stickyCloseBtns.forEach((btn) => {
+      btn.addEventListener('click', function (e) {
+        this.parentElement.style.display = 'none';
+      });
+    });
     const switchTheme = document.querySelector(
       '[data-switch-theme]'
     ) as HTMLButtonElement;
